@@ -1,0 +1,81 @@
+<div class="container">
+  <form class="needs-validation" #cadastro = "ngForm" (submit)="salvar(cadastro)" name="cadastro">
+    <main role="main" class="container">
+      <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Escolha a turma e aluno desejado</h6>
+        
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Turma</label>
+            </div>
+            <select class="custom-select" [(ngModel)]="turma" name="turma" required>
+              <option selected value=null>Selecione uma Turma...</option>
+              <option *ngFor="let turma of turmas" value={{turma.numero}}>{{turma.nome}}</option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Aluno</label>
+            </div>
+            <select class="custom-select" [(ngModel)]="aluno" name="aluno" #alunoV = "ngModel" required
+            [class.is-invalid]="alunoV.invalid && (alunoV.dirty || alunoV.touched)">
+              <option selected value=null>Selecione um aluno...</option>
+              <option *ngFor="let aluno of encontrarTurma(turma)" value={{aluno.codigo}}>{{aluno.nome}}</option>
+            </select>
+            <div class="container">
+            <small class="form-text text-muted"
+                    *ngIf="(alunoV.invalid && (alunoV.dirty || alunoV.touched))">
+                    Selecione um aluno para continuar.
+              </small>
+            </div>
+          </div>
+      </div>
+
+      <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Alunos</h6>
+          <div class="col">
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="frequencia">Frequencia<span class="text-muted">*</span></label>
+                <input type="number" class="form-control" [(ngModel)]= "frequencia" name="frequencia" #frequenciaV="ngModel" required [disabled]="alunoV.invalid"
+                [class.is-invalid]="frequenciaV.invalid && (frequenciaV.dirty || frequenciaV.touched)">
+                <small class="form-text text-muted"
+                  *ngIf="!(frequenciaV.invalid && (frequenciaV.dirty || frequenciaV.touched))">Informe a frequencia</small>
+                <div *ngIf="frequenciaV.invalid && (frequenciaV.dirty || frequenciaV.touched)" class="invalid-feedback">
+                  <span *ngIf="frequenciaV.errors.required">Você precisa informar a frequencia</span>
+                </div>
+              </div>
+            
+              <div class="col-md-4 mb-3">
+                <label for="nota1">Nota 1<span class="text-muted">*</span></label>
+                <input type="number" class="form-control" [(ngModel)]= "nota1" name="nota1" #nota1V="ngModel" required [disabled]="alunoV.invalid"
+                [class.is-invalid]="nota1V.invalid && (nota1V.dirty || nota1V.touched)">
+                <small class="form-text text-muted"
+                  *ngIf="!(nota1V.invalid && (nota1V.dirty || nota1V.touched))">Informe a nota 1</small>
+                <div *ngIf="nota1V.invalid && (nota1V.dirty || nota1V.touched)" class="invalid-feedback">
+                  <span *ngIf="nota1V.errors.required">Você precisa informar a nota 1 </span>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label for="nota2">Nota 2<span class="text-muted">*</span></label>
+                <input type="number" class="form-control" [(ngModel)]= "nota2" name="nota2" #nota2V="ngModel" required [disabled]="alunoV.invalid"
+                [class.is-invalid]="nota2V.invalid && (nota2V.dirty || nota2V.touched)">
+                <small class="form-text text-muted"
+                  *ngIf="!(nota2V.invalid && (nota2V.dirty || nota2V.touched))">Informe a nota 2</small>
+                <div *ngIf="nota2V.invalid && (nota2V.dirty || nota2V.touched)" class="invalid-feedback">
+                  <span *ngIf="nota2V.errors.required">Você precisa informar a nota 2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <button class="btn btn-primary btn-lg btn-block" [disabled]="cadastro.invalid">Salvar</button>
+      </div>
+    </main>
+  </form>
+</div>
+
+
+

@@ -1,0 +1,41 @@
+[
+  {
+    "numero": "M1A",
+    "nome": "Primeiro Ano do Médio – Turma A",
+    "alunos": [
+      {
+        "codigo": "1",
+        "nome": "José Silva",
+        "frequencia": "",
+        "nota1": "",
+        "nota2": ""
+
+      },
+
+      {
+        "codigo": "4",
+        "nome": "Amanda Souza",
+        "frequencia": "",
+        "nota1": "",
+        "nota2": ""
+      },
+
+      {
+        "codigo": "2",
+        "nome": "Maria Oliveira",
+        "frequencia": "",
+        "nota1": "",
+        "nota2": ""
+      },
+
+      {
+      "codigo": "3",
+      "nome": "Pedro Santos",
+      "frequencia": "",
+      "nota1": "",
+      "nota2": ""
+      }
+
+    ]
+  }
+]
