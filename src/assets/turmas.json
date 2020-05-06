@@ -5,37 +5,46 @@
     "alunos": [
       {
         "codigo": "1",
-        "nome": "José Silva",
-        "frequencia": "",
-        "nota1": "",
-        "nota2": ""
-
+        "nome": "José Silva"
       },
 
       {
         "codigo": "4",
-        "nome": "Amanda Souza",
-        "frequencia": "",
-        "nota1": "",
-        "nota2": ""
+        "nome": "Amanda Souza"
       },
 
       {
         "codigo": "2",
-        "nome": "Maria Oliveira",
-        "frequencia": "",
-        "nota1": "",
-        "nota2": ""
+        "nome": "Maria Oliveira"
       },
 
       {
       "codigo": "3",
-      "nome": "Pedro Santos",
-      "frequencia": "",
-      "nota1": "",
-      "nota2": ""
+      "nome": "Pedro Santos"
       }
 
+    ]
+  },
+
+  {
+    "numero": "M2A",
+    "nome": "Segundo Ano do Médio – Turma A",
+    "alunos": [
+      {
+        "codigo": "1",
+        "nome": "Luisa Carvalho"
+
+      },
+
+      {
+        "codigo": "2",
+        "nome": "Celena Souza"
+      },
+
+      {
+        "codigo": "3",
+        "nome": "Matheus Nunes"
+      }
     ]
   }
 ]
